@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Emojih
 // @namespace    http://github.com/prantiknoor
-// @version      2.0
+// @version      2.0.1
 // @description  Emoji shortcuts
 // @author       Prantik
 // @match        *://*/*

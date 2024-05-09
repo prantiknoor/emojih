@@ -2,7 +2,7 @@
   "name": "emojih",
   "private": false,
   "description": "Emojih is a simple javacript code that simplify typing emoji. You don't need to search on the ui to use. Just remember the easy shortcut of emojis and type fluently on your inbox 😉",
-  "version": "2.0.0",
+  "version": "2.0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,6 +10,6 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^5.2.0"
+    "vite": "^5.2.0.1"
   }
 }
