@@ -31,14 +31,15 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 3em;
   line-height: 1.1;
+  margin: 1rem 0;
 }
 
 #app {
   max-width: 720px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
 }
 
@@ -47,21 +48,22 @@ h1 {
     color: #213547;
     background-color: #ffffff;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
 
 .version {
   font-size: 1rem;
 }
 
+.author {
+  position: relative;
+  top: -1.2rem;
+  left: 2rem;
+}
+
 .inputs {
   display: flex;
   flex-direction: column;
+  margin: 1.5rem 0;
   row-gap: 1rem;
 }
 
@@ -104,8 +106,4 @@ h1 {
   flex-direction: column;
   row-gap: 0.8rem;
   font-size: 1rem;
-}
-
-.footer {
-  margin-top: 3rem;
 }
