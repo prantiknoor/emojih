@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Emojih
 // @namespace    http://github.com/prantiknoor
-// @version      1.0
+// @version      2.0
 // @description  Emoji shortcuts
 // @author       Prantik
 // @match        *://*/*
@@ -178,10 +178,9 @@ const emojis = {
 
 (function () {
   "use strict";
-  function searchAndReplaceWithEmoji() {
-    const selection = window.getSelection();
-    const text = selection.anchorNode.textContent;
-    const endIndex = selection.anchorOffset;
+  function searchAndReplaceWithEmoji(controller) {
+    const text = controller.textContent;
+    const endIndex = controller.cursorOffset;
 
     let startIndex = endIndex - 2,
       count = 1,
@@ -209,21 +208,53 @@ const emojis = {
 
     if (emoji) {
       const emojis = emoji.repeat(count || 1);
-      replace(emojis, startIndex);
+      controller.replace(emojis, startIndex);
+    }
+  }
+  class InputElementController {
+    constructor(element) {
+      this.element = element;
+      this.cursorOffset = element.selectionStart ?? 0;
+      this.textContent = element.value;
+    }
+
+    replace(value, startOffset) {
+      this.element.setSelectionRange(startOffset, this.cursorOffset);
+      document.execCommand("insertText", false, value);
     }
   }
 
-  function replace(value, startOffset) {
-    const selection = window.getSelection();
+  class TextNodeController {
+    constructor() {
+      this.selection = window.getSelection();
+      this.textNode = this.selection.anchorNode;
 
-    selection.extend(selection.anchorNode, startOffset);
+      this.textContent = this.textNode.textContent;
+      this.cursorOffset = this.selection?.anchorOffset;
+    }
 
-    document.execCommand("insertText", false, value);
+    replace(value, startOffset) {
+      this.selection.extend(this.textNode, startOffset);
+
+      document.execCommand("insertText", false, value);
+    }
+  }
+
+  function getController(target) {
+    if (
+      target instanceof HTMLInputElement ||
+      target instanceof HTMLTextAreaElement
+    ) {
+      return new InputElementController(target);
+    }
+    return new TextNodeController();
   }
 
   window.addEventListener("keyup", (event) => {
     if ([":", ";"].includes(event.key)) {
-      searchAndReplaceWithEmoji();
+      const controller = getController(event.target);
+
+      searchAndReplaceWithEmoji(controller);
     }
   });
 

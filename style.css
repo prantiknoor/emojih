@@ -42,7 +42,6 @@ h1 {
   text-align: center;
 }
 
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -56,26 +55,57 @@ h1 {
   }
 }
 
+.version {
+  font-size: 1rem;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+/* style the input element */
+.input {
+  width: 100%;
+  padding: 8px 16px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  border: 3px solid #cf7777;
+  border-radius: 8px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+/* style the textarea element */
+.textarea {
+  width: 100%;
+  padding: 8px 16px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 3px solid #42e285;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
 .textbox {
-  margin: 2rem 0;
   padding: 16px;
   min-height: 100px;
   border-radius: 8px;
   text-align: start;
-  border: 1px solid white;
+  border: 3px solid #428ce2;
 }
 
 .example {
   display: flex;
   flex-direction: column;
-  row-gap: .8rem;
+  row-gap: 0.8rem;
   font-size: 1rem;
 }
 
 .footer {
   margin-top: 3rem;
-}
-
-.version {
-  font-size: 1rem;
 }

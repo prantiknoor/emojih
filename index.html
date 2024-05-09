@@ -9,28 +9,33 @@
   </head>
   <body>
     <div id="app">
-      <h1>Emojih 😎 <code class="version">v1.0</code></h1>
+      <h1>Emojih 😎 <code class="version">v2.0</code></h1>
       <p>
         Emojih is a simple javacript code that simplify typing emoji. You don't
         need to search on the ui to use. Just remember the easy shortcut of
         emojis and type fluently on your inbox 😉
       </p>
-      <div
-        aria-describedby=":r3i:"
-        aria-label="Message"
-        class="textbox xzsf02u x1a2a7pz x1n2onr6 x14wi4xw x1iyjqo2 x1gh3ibb xisnujt xeuugli x1odjw0f notranslate"
-        contenteditable="true"
-        role="textbox"
-        spellcheck="true"
-        tabindex="0"
-        style="user-select: text; white-space: pre-wrap; word-break: break-word"
-        data-lexical-editor="true"
-      ></div>
-      <div class="example">
-        <code>hehe; -> 😀</code>
-        <code>:thinking: -> 🤔</code>
-        <code>smart.2; -> 😎😎</code>
-        <code>(Check console for more)</code>
+      <div class="inputs">
+        <input type="text" class="input" />
+        <textarea name="textbox" id="textbox" class="textarea"></textarea>
+        <div
+          class="textbox"
+          contenteditable="true"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+          style="
+            user-select: text;
+            white-space: pre-wrap;
+            word-break: break-word;
+          "
+        ></div>
+        <div class="example">
+          <code>hehe; -> 😀</code>
+          <code>:thinking: -> 🤔</code>
+          <code>smart.2; -> 😎😎</code>
+          <code>(Check console for more)</code>
+        </div>
       </div>
       <div class="footer">
         <code
