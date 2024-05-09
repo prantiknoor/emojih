@@ -1,8 +1,6 @@
 # Emojih 😎 v2.0
 
-Emojih is a simple script that is written on JavaScript. It simplify typing emoji. You don't
-need to search of emoji on the ui to use. Just remember some simlpe easy shortcut of
-emojis and type fluently on your inbox 😉
+Emojih is a simple script that is written on JavaScript. It simplifies typing emoji. You don't need to search of emoji on the UI to use. Just remember some simple and easy shortcut of emojis and type fluently on your inbox 😉
 
 ```
 hehe; -> 😀
