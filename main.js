@@ -253,11 +253,11 @@ const emojis = {
     return new TextNodeController();
   }
 
-  window.addEventListener("beforeinput", (event) => {
+  window.addEventListener("keyup", (event) => {
     if ([":", ";"].includes(event.key)) {
       const controller = getController(event.target);
 
-      setTimeout(() => searchAndReplaceWithEmoji(controller));
+      searchAndReplaceWithEmoji(controller);
     }
   });
 
